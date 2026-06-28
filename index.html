@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Resizer and Compressor</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content">
+    <h1>Image Resizer and Compressor</h1>
+    <div class="preview-section">
+      <div class="preview"></div>
+      <label for="filepicker">
+        <input type="file" id="filepicker" accept="image/*" hidden>
+        <button id="upload" class="btn-primary"><i class="bx bx-cloud-upload"></i>Upload Image</button>
+      </label>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="compress">
+      <div class="label"><i class="bx bx-collapse-alt"></i>Compress</div>
+      <div class="quality-type">
+        <span>Low</span><span>Medium</span><span>High</span>
+      </div>
+      <input type="range" id="compressor" min="0" max="1" value="1" step="0.1">
+      <div class="info-wrap">
+        <div class="group"><div>Quality Level</div><div class="quality-level">100%</div></div>
+        <div class="group"><div>Original Size</div><div class="original-size">N/A</div></div>
+        <div class="group"><div>Current Size</div><div class="cur-size">N/A</div></div>
+        <div class="group"><div>Compressed Size</div><div class="compressed-size">N/A</div></div>
+      </div>
+    </div>
+
+    <div class="resize">
+      <div class="label"><i class="bx bx-expand-alt"></i>Resize (px)</div>
+      <div class="group">
+        <div class="wrap">
+          <div>Width</div>
+          <input type="number" id="width" min="1">
+        </div>
+        <div class="wrap middle">
+          <input type="checkbox" id="ratio" checked hidden>
+          <label for="ratio" class="unlock"><i class="bx bxs-lock-open"></i></label>
+          <label for="ratio" class="lock"><i class="bx bxs-lock"></i></label>
+        </div>
+        <div class="wrap">
+          <div>Height</div>
+          <input type="number" id="height" min="1">
+        </div>
+      </div>
+      <div class="info-wrap">
+        <div class="group"><div>Original Dimension</div><div class="original-dimension">N/A</div></div>
+        <div class="group"><div>Resized Dimension</div><div class="resized-dimension">N/A</div></div>
+      </div>
+      <button id="reset" class="btn-secondry">Reset Dimension</button>
+    </div>
+
+    <button id="download" class="btn-primary"><i class="bx bxs-download"></i>Download Image</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
